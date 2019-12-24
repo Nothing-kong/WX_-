@@ -15,7 +15,7 @@
       <image src="/images/detail/carousel/04.jpg"></image>
     </swiper-item>
   </swiper>
-  <view wx:for="{{listArr}}" wx:key="{{index}}">
+  <view wx:for="{{listArr}}" wx:key="id">
     <view bindtap="toDetail" data-index="{{index}}">
       <template is="listTmp" data="{{...item}}"></template>
     </view>

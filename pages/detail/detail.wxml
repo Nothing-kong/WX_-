@@ -1,7 +1,7 @@
 <!--pages/detail/detail.wxml-->
 <view id="detailContainer">
-  <image class="detail_header" src="{{detailObj.detail_img}}"></image>
-  <image class="musicImg" src="/images/music/music-stop.png"></image>
+  <image class="detail_header" src="{{isMusicPlay?detailObj.music.coverImgUrl:detailObj.detail_img}}"></image>
+  <image catchtap="handleMusicPlay" class="musicImg" src="{{isMusicPlay?'/images/music/music-start.png':'/images/music/music-stop.png'}}"></image>
   <view class="detail_author_date">
     <image src="{{detailObj.avatar}}"></image>
     <text>{{detailObj.author}}</text>
@@ -11,7 +11,7 @@
   <text class="detail_company">{{detailObj.title}}</text>
   <view class="detail_collection_share">
     <view class="col_share_img">
-      <image bindtap="handCollection" src="{{isCollected ?'/images/icon/collection.png' : '/images/icon/collection-anti.png'"></image>
+      <image bindtap="handleCollection" src="{{isCollected?'/images/icon/collection.png':'/images/icon/collection-anti.png'}}"></image>
       <image catchtap="handleShare" src="/images/icon/share.png"></image>
     </view>
     <view class="line"></view>
