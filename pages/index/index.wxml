@@ -1,6 +1,6 @@
 <!--pages/index/index.wxml-->
 <view class='indexContainer'>
-<image class='userImg' src='/images/index/cart.jpg'></image>
+<image class='userImg' src='/images/music/Sunset.jpg'></image>
 <text class='userName'>{{msg}}</text>
 <view class='gostudy' catchtap="toList">
 <text>开启小程序之旅</text>
