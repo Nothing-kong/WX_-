@@ -1,35 +1,36 @@
-// pages/list/list.js
-// 模板数据
+// pages/detail/detail.js
 let datas = require('../../datas/list-data.js');
 console.log(datas, typeof datas)
+
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    listArr: []
+    detailObj: {},
+    icCollected: false, //标识当前文章是否被收藏，默认是未收藏
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // 更新listArr的状态数据
+    console.log(options) // options就是用来收集query参数的对象
+    let index = options.index
+    // 更新detailObj的状态数据
     this.setData({
-      listArr: datas.list_data
+      detailObj: datas.list_data[index],
+      index
     })
   },
+  //读取本地缓存的收藏状态数据
+  let oldStorage = wx.getStorageSync('isCollected'),
 
-
-  // 跳转至详情页的方法
-  toDetail(event) {
-    // 获取到点击模板的下标
-    console.log(event)
-    let index = event.currentTarget.dataset.index
-    console.log(index)
-    wx.navigateTo({
-      url: '/pages/detail/detail?index=' + index,
+  if(oldStorage[index]){
+    this.setData({
+      
     })
   },
 
